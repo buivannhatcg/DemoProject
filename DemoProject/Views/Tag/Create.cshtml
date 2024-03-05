@@ -1,0 +1,65 @@
+﻿@using DemoProject.Models.Tag
+@model TagVM
+
+@{
+    ViewData["Title"] = "Tag";
+}
+
+<div class="tag-create" style="">
+    <h2>CREATE TAG</h2>
+    <form asp-action="Create" asp-controller="Tag" method="post" id="frm-tag-create">
+        <div class="row my-4">
+            <div class="col-12 d-flex justify-content-center">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            </div>
+        </div>
+        <div class="mb-3 mt-5 row">
+            <label class="col-sm-3 form-label">TagName</label>
+            <div class="col-sm-6">
+                <input class="form-control" asp-for="@Model.Name" />
+                <span asp-validation-for="Name" class="text-danger tag-name-error"></span>
+            </div>
+        </div>
+        <div class="row mb-2">
+            <label class="col-sm-3 form-label">DisplayName</label>
+            <div class="col-sm-6">
+                <input asp-for="@Model.DisplayName" class="form-control" />
+                <span asp-validation-for="DisplayName" class="text-danger tag-dispalyname-error"></span>
+            </div>
+        </div>
+        <div class="row mb-2">
+            <label class="col-sm-2 col-form-label">​</label>
+            <div class="col-sm-10 d-flex justify-content-around">
+                <a id="btn-tag-list" href="/Tag/Index" class="btn btn-danger">Back​</a>
+                <button id="btn-confirm" type="submit" class="btn btn-danger">Create</button>
+            </div>
+        </div>
+    </form>
+ @*    <div class="tag-create-confirm d-none">
+        <div class="mb-3 row">
+            <h3>Ban muon dang ky nhung thong tin sau​​</h3>
+            <div class="mb-3 mt-5 row">
+                <label class="col-sm-2 col-form-label">Name​​</label>
+                <div class="col-sm-10">
+                    <p id="txt-tag-name-confirm"></p>
+                </div>
+            </div>
+            <div class="mb-3 row">
+                <label class="col-sm-2 col-form-label">DispalyName​​</label>
+                <div class="col-sm-10">
+                    <p id="txt-tag-displayname-confirm"></p>
+                </div>
+            </div>
+
+        </div>
+        <div class="mb-3 row">
+            <button id="btn-close" type="button" class="btn btn-gray me-4" style="width:150px;">修正​​</button>
+            <button id="btn-submit" type="button" class="btn btn-gray" style="width:150px;">登録​​</button>
+        </div> *@
+
+    </div>
+</div>
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+@*     <script src="~/js/tag/create_tag.js"></script> *@
+}

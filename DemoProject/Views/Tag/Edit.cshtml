@@ -1,0 +1,41 @@
+﻿@using DemoProject.Models.Tag
+
+@model TagVM
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h3>Edit Tag</h3>
+B
+<form asp-action="Tag /Edit/@Model.TagId" asp-controller="Tag" method="post">
+    <input type="hidden" asp-for="@Model.TagId" />
+    <div class="row my-4">
+        <div class="col-12 d-flex justify-content-center">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        </div>
+    </div>
+    <div class="m-3 row">
+        <label class="col-3 col-form-label">Name​</label>
+        <div class="col-9">
+            <input asp-for="Name" class="form-control">
+            <span asp-validation-for="Name" class="text-danger category-name-error"></span>
+        </div>
+    </div>
+    <div class="m-3 row">
+        <label class="col-3 col-form-label">DisplayName​</label>
+        <div class="col-9">
+            <input asp-for="DisplayName" class="form-control">
+            <span asp-validation-for="DisplayName" class="text-danger category-name-error"></span>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="d-flex justify-content-center">
+            <a id="btn-category-list" href="/Category/Index" class="btn btn-secondary col-2 m-5">Back​​</a>
+            <button id="btn-confirm" type="button" class="btn btn-secondary col-2 m-5">Edit​​</button>
+        </div>
+    </div>
+
+</form>
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
